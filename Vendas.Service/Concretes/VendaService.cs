@@ -30,14 +30,12 @@ namespace Vendas.Service.Concretes
             return venda;
         }
 
-        public async Task<DtoVenda> BuscarPorId(int idVenda)
+        public async Task<Venda> BuscarPorId(int idVenda)
         {
 
-            var venda = await _vendaRepository.GetByIdAsync(idVenda);
+            var venda = await _vendaRepository.GetByIdAsync(idVenda);          
 
-            var dtoVenda = new DtoVenda();            
-
-            return dtoVenda;
+            return venda;
         }
 
         public async Task<Venda> Inserir(Venda venda)

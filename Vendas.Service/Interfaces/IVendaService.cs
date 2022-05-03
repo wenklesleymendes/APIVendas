@@ -9,6 +9,6 @@ namespace Vendas.Service.Interfaces
     {
         Task<Venda> Inserir(Venda venda);
         Task<Venda> Alterar(Venda venda);
-        Task<DtoVenda> BuscarPorId(int idVenda);
+        Task<Venda> BuscarPorId(int idVenda);
     }
 }
