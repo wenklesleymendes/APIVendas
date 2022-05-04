@@ -2,12 +2,11 @@
 using System;
 using System.Threading.Tasks;
 using Vendas.Core.Model;
-using Vendas.Service.Dtos;
 using Vendas.Service.Interfaces;
 
 namespace Vendas.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api-docs/[controller]")]
     [ApiController]
     public class VendaController : Controller
     {

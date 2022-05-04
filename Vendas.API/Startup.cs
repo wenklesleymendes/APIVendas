@@ -11,6 +11,8 @@ using Vendas.Repository.Interfaces;
 using Vendas.Repository.Repository;
 using Vendas.Service.Concretes;
 using Vendas.Service.Interfaces;
+using VendasCursos.Service.Concretes;
+using VendasCursos.Service.Interfaces;
 
 namespace Cursos.API
 {
@@ -34,12 +36,16 @@ namespace Cursos.API
             services.AddControllers();
             services.AddScoped<IVendaService, VendaService>();
             services.AddScoped<IVendaRepository, VendaRepository>();
+            services.AddScoped<IVendedorService, VendedorService>();
+            services.AddScoped<IVendedorRepository, VendedorRepository>();
+            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddSendGrid(options =>
             options.ApiKey = Configuration.GetSection("Notification:SendGridAPIKey").Value
                 );
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cursos.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Vendas.API", Version = "v1" });
             });
         }
 
@@ -50,7 +56,7 @@ namespace Cursos.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cursos.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vendas.API v1"));
             }
 
             app.UseCors(x => x

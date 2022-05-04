@@ -44,7 +44,9 @@ namespace Vendas.Repository.Repository
 
         public virtual async Task<TEntity> GetByIdAsync(object id)
         {
-            return await dbSet.FindAsync(id);
+            TEntity entity = await dbSet.FindAsync(id);
+            dbContext.Entry(entity).State = EntityState.Detached;
+            return entity;
         }
 
         public virtual async Task<bool> RemoveAsync(object id)

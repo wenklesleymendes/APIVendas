@@ -1,6 +1,4 @@
-﻿using Vendas.Service.Dtos;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Vendas.Core.Model;
 
 namespace Vendas.Service.Interfaces

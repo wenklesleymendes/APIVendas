@@ -1,11 +1,11 @@
 ﻿using Vendas.Core.Model;
 using Vendas.Repository.Interfaces;
-using Vendas.Service.Dtos;
 using Vendas.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
 using Vendas.Core.Enumeradores;
+using Microsoft.EntityFrameworkCore;
 
 namespace Vendas.Service.Concretes
 {
