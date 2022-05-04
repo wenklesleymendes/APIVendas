@@ -7,7 +7,7 @@ using Vendas.Core.Interfaces;
 
 namespace Vendas.Core.Model
 {
-    public class ProdutosVenda : EntidadeBase, IIdentityEntity
+    public class ProdutosVenda : IIdentityEntity
     {
         public int Id { get; set; }
         public int IdVenda { get; set; }
